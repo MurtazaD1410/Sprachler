@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lingopie DE</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <h1>Lingopie DE</h1>
+    <label class="switch big">
+      <input id="toggle" type="checkbox" />
+      <span class="track"><span class="thumb"></span></span>
+    </label>
+    <p id="status" class="status">Off</p>
+
+    <button id="open-wortschatz" class="wortschatz" type="button">
+      <span>Wortschatz</span><span id="due-text" class="due-text"></span>
+    </button>
+
+    <div class="settings">
+      <div class="row">
+        <span>English translation</span>
+        <label class="switch small">
+          <input id="translation" type="checkbox" />
+          <span class="track"><span class="thumb"></span></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Lines on screen</span>
+        <select id="lines">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="subs">
+      <div class="subs-head">
+        <span>German subtitles for this video</span>
+      </div>
+      <p id="subs-state" class="subs-state">Checking…</p>
+      <div class="subs-actions">
+        <button id="subs-load" type="button">Load .srt / .vtt file…</button>
+        <button id="subs-remove" type="button" hidden>Remove</button>
+      </div>
+      <input id="subs-file" type="file" accept=".srt,.vtt,.txt,text/vtt" hidden />
+      <div id="subs-timing" class="timing" hidden>
+        <span>Timing</span>
+        <div class="stepper">
+          <button type="button" data-step="-1">−1s</button>
+          <button type="button" data-step="-0.1">−0.1</button>
+          <output id="subs-offset">0.0s</output>
+          <button type="button" data-step="0.1">+0.1</button>
+          <button type="button" data-step="1">+1s</button>
+        </div>
+      </div>
+      <p id="subs-note" class="engine-note"></p>
+    </div>
+
+    <div class="engine">
+      <div class="engine-head">Translation engines <span class="muted">(tried in this order)</span></div>
+      <ul class="engines">
+        <li data-engine="on-device">
+          <span class="dot checking"></span><span class="name">On-device</span>
+          <span class="state">Checking…</span><span class="pill" hidden>in use</span>
+        </li>
+        <li data-engine="google">
+          <span class="dot checking"></span><span class="name">Google</span>
+          <span class="state">Checking…</span><span class="pill" hidden>in use</span>
+        </li>
+        <li data-engine="mymemory">
+          <span class="dot checking"></span><span class="name">MyMemory</span>
+          <span class="state">Checking…</span><span class="pill" hidden>in use</span>
+        </li>
+      </ul>
+      <p id="engine-note" class="engine-note"></p>
+      <button id="download" class="download" type="button" hidden>Download offline translation</button>
+    </div>
+
+    <div class="usage">
+      <div class="usage-head">
+        <span>MyMemory quota today</span>
+        <span id="usage-text">0 / 5,000</span>
+      </div>
+      <div class="meter" role="progressbar" aria-label="Translation quota used today" aria-valuemin="0" aria-valuemax="100">
+        <div id="usage-fill" class="fill"></div>
+      </div>
+      <p id="usage-note" class="usage-note"></p>
+    </div>
+
+    <p class="hint">Turn this on for German videos only. Word cards work with or without translation.</p>
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

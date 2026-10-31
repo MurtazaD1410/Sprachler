@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a6df0" />
+      <stop offset="1" stop-color="#7b4dff" />
+    </linearGradient>
+  </defs>
+  <!-- app tile -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)" />
+  <!-- caption bubble with a tail -->
+  <path
+    d="M36 26h56a16 16 0 0 1 16 16v38a16 16 0 0 1-16 16H66L44 112V96h-8a16 16 0 0 1-16-16V42a16 16 0 0 1 16-16z"
+    fill="#ffffff"
+  />
+  <!-- two caption lines; the gold bar is the clicked word -->
+  <rect x="34" y="42" width="60" height="10" rx="5" fill="#3a6df0" opacity="0.35" />
+  <rect x="34" y="64" width="26" height="10" rx="5" fill="#3a6df0" opacity="0.35" />
+  <rect x="66" y="62" width="28" height="14" rx="5" fill="#ffd54a" />
+</svg>

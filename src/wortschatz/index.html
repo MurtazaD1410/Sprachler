@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wortschatz</title>
+    <link rel="icon" href="../assets/icons/icon-32.png" />
+    <link rel="stylesheet" href="./wortschatz.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Wortschatz</h1>
+      <nav>
+        <button type="button" data-tab="review" class="tab active">Review <span id="due-badge" class="badge"></span></button>
+        <button type="button" data-tab="words" class="tab">Words <span id="count-badge" class="badge"></span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="review">
+        <div id="review-empty" class="empty" hidden></div>
+        <div id="review-card" hidden>
+          <div id="progress" class="progress"></div>
+          <div class="card">
+            <div id="front" class="front"></div>
+            <div id="back" class="back" hidden></div>
+          </div>
+          <button id="show" type="button" class="primary">Show answer <kbd>Space</kbd></button>
+          <div id="grades" class="grades" hidden>
+            <button type="button" data-grade="1" class="g again">Again<small></small><kbd>1</kbd></button>
+            <button type="button" data-grade="2" class="g hard">Hard<small></small><kbd>2</kbd></button>
+            <button type="button" data-grade="3" class="g good">Good<small></small><kbd>3</kbd></button>
+            <button type="button" data-grade="4" class="g easy">Easy<small></small><kbd>4</kbd></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="words" hidden>
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="Search words and meanings" aria-label="Search words" />
+          <select id="filter" aria-label="Filter words">
+            <option value="all">All</option>
+            <option value="due">Due</option>
+            <option value="new">New</option>
+            <option value="learning">Learning</option>
+            <option value="learned">Learned</option>
+          </select>
+        </div>
+        <div class="toolbar actions">
+          <button type="button" id="export-anki">Export Anki CSV</button>
+          <button type="button" id="export-json">Backup (JSON)</button>
+          <button type="button" id="import-json">Import backup</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden />
+        </div>
+        <p id="words-note" class="note"></p>
+        <ul id="word-list" class="word-list"></ul>
+      </section>
+    </main>
+    <script type="module" src="./wortschatz.ts"></script>
+  </body>
+</html>
