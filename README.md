@@ -149,5 +149,5 @@ src/
 - Translation: Chrome's built-in Translator API, Google Translate, [MyMemory](https://mymemory.translated.net/)
 - Spaced repetition: [ts-fsrs](https://github.com/open-spaced-repetition/ts-fsrs)
 - Pronunciation audio: Wikimedia Commons recordings listed on Wiktionary
-#   S p r a c h l e r  
+ 
  
